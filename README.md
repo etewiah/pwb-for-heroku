@@ -1,24 +1,41 @@
-# README
+# PropertyWebBuilder for heroku
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a fully featured Ruby on Rails website that is ready to be deployed to heroku.
+It is a demonstration of how the [PropertyWebBuilder]() Rails engine can be used in an application.
 
-Things you may want to cover:
 
-* Ruby version
+## Deploying to Heroku
 
-* System dependencies
+First of all [sign up for Heroku](https://signup.heroku.com/identity) if you don't already have an account, and install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
-* Configuration
+Next, clone this repository:
 
-* Database creation
+```
+git clone https://github.com/etewiah/pwb-for-heroku.git
+```
 
-* Database initialization
+CD into the directory for the project and run the ff:
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+heroku create
+heroku addons:create heroku-postgresql
+git push heroku master
+heroku run rake db:migrate
+heroku run rake pwb:db:seed
+heroku open
+```
 
-* Deployment instructions
 
-* ...
+
+## Documentation
+
+For more about the PropertyWebBuilder gem see:
+
+[PropertyWebBuilder](https://etewiah.github.io/property-web-builder/)
+
+For more information about using Ruby on Heroku, see these Dev Center articles:
+
+- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+- [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support)
