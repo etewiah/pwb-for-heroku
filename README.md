@@ -1,7 +1,7 @@
 # PropertyWebBuilder for heroku
 
 This application is a fully featured Ruby on Rails website that is ready to be deployed to heroku.
-It is a demonstration of how the [PropertyWebBuilder]() Rails engine can be used in an application.
+It is a demonstration of how the [PropertyWebBuilder](https://github.com/etewiah/property-web-builder) Rails engine can be used in an application.
 
 
 ## Deploying to Heroku
