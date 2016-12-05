@@ -1,18 +1,20 @@
 GIT
   remote: https://github.com/etewiah/property-web-builder
-  revision: 4956455cc58c3143d6b82a5d3c8fbfd133c57e4a
+  revision: 6ceda4050673f35faf1b13ccfbfd43d91278f1e2
   branch: master
   specs:
     pwb (0.1.0)
       activemodel-serializers-xml
       bootstrap-sass
       carrierwave (>= 1.0.0.rc, < 2.0)
+      fog-aws
       globalize-accessors
       i18n-active_record
       jquery-rails
       jsonapi-resources
       money-rails
       paloma
+      pg
       rails (~> 5.0.0, >= 5.0.0.1)
       responders
       simple_form
@@ -93,8 +95,25 @@ GEM
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     erubis (2.7.0)
+    excon (0.54.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    fog-aws (0.13.0)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (1.43.0)
+      builder
+      excon (~> 0.49)
+      formatador (~> 0.2)
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-xml (0.1.2)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
+    formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     globalize-accessors (0.2.1)
@@ -102,6 +121,7 @@ GEM
     i18n (0.7.0)
     i18n-active_record (0.1.2)
       i18n (>= 0.5.0)
+    ipaddress (0.8.3)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
