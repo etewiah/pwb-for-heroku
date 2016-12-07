@@ -23,7 +23,10 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # config.assets.compile = false
+  # http://stackoverflow.com/questions/19194515/rails-4-app-on-heroku-is-serving-css-and-js-but-not-image-assets?rq=1
+  # to allow font files to be served
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
