@@ -1,9 +1,9 @@
 GIT
-  remote: https://github.com/etewiah/property-web-builder
-  revision: 3889d19b0e3c6dee42377b356319a9f8001a9379
+  remote: https://github.com/etewiah/property_web_builder
+  revision: b8d53dc356fcaf30e19570ee0685378f9755f5a4
   branch: master
   specs:
-    property-web-builder (0.1.0)
+    pwb (0.1.0)
       activemodel-serializers-xml
       bootstrap-sass
       carrierwave (= 1.0.0.beta)
@@ -278,8 +278,8 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.18)
-  property-web-builder!
   puma (~> 3.0)
+  pwb!
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)
   spring
