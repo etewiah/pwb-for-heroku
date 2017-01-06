@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 7ca8891f06e8a5627c19e481449a1b5b48850a93
+  revision: 05320deefb0a84bd994447ee0542845bdfc1c795
   branch: master
   specs:
     pwb (0.0.1)
