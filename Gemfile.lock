@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 05320deefb0a84bd994447ee0542845bdfc1c795
+  revision: 03442161379b90e7da83afe57bc6b38930ff1b5e
   branch: master
   specs:
     pwb (0.0.1)
@@ -171,7 +171,7 @@ GEM
     minitest (5.10.1)
     monetize (1.4.0)
       money (~> 6.7)
-    money (6.8.0)
+    money (6.8.1)
       i18n (>= 0.6.4, <= 0.7.0)
       sixarm_ruby_unaccent (>= 1.1.1, < 2)
     money-rails (1.7.0)
