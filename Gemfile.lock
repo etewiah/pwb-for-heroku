@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: ad39962fc64dd81dc8aee33eec754030c432a7d8
+  revision: 2e37968ac6eca4ac5b487a35e12d4ddba6ee8db3
   branch: master
   specs:
-    pwb (0.0.1)
+    pwb (0.0.2)
       active_hash
       activemodel-serializers-xml
       bootstrap-sass
