@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 3624c1145f2b605db488117c71041c12cc08e34f
+  revision: f33eca0c91cf149b031403dd7a5657a83850e9b9
   branch: master
   specs:
-    pwb (0.0.2)
+    pwb (0.1.0)
       active_hash
       activemodel-serializers-xml
       bootstrap-sass
@@ -16,7 +16,7 @@ GIT
       i18n-active_record
       jquery-rails
       jsonapi-resources (= 0.8.1)
-      money-rails
+      money-rails (~> 1)
       paloma
       pg
       rails (~> 5.0.0, >= 5.0.0.1)
@@ -26,9 +26,9 @@ GIT
 
 GIT
   remote: https://github.com/globalize/globalize
-  revision: 5b0ff2c92e7536f908dc82a4c2a15b04be79e821
+  revision: 8daef404a33fce7d8e6bf444451335e6f4d828d2
   specs:
-    globalize (5.1.0)
+    globalize (5.1.0.beta1)
       activemodel (>= 4.2, < 5.1)
       activerecord (>= 4.2, < 5.1)
       request_store (~> 1.0)
@@ -59,7 +59,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_hash (1.4.1)
+    active_hash (1.5.0)
       activesupport (>= 2.2.2)
     activejob (5.0.2)
       activesupport (= 5.0.2)
@@ -81,7 +81,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (6.7.6)
+    autoprefixer-rails (6.7.7.1)
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
@@ -94,10 +94,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    cloudinary (1.5.2)
+    cloudinary (1.7.0)
       aws_cf_signer
-      json (~> 1.8)
-      rest-client (< 2.0)
+      rest-client
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -107,20 +106,20 @@ GEM
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
-    devise (4.2.0)
+    devise (4.2.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.1.1)
-    domain_name (0.5.20170223)
+    devise-i18n (1.1.2)
+    domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     excon (0.55.0)
     execjs (2.7.0)
     ffi (1.9.14)
-    fog-aws (1.2.1)
+    fog-aws (1.3.0)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -132,9 +131,9 @@ GEM
     fog-json (1.0.2)
       fog-core (~> 1.0)
       multi_json (~> 1.10)
-    fog-xml (0.1.2)
+    fog-xml (0.1.3)
       fog-core
-      nokogiri (~> 1.5, >= 1.5.11)
+      nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -143,18 +142,17 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httpclient (2.7.2)
-    i18n (0.7.0)
-    i18n-active_record (0.1.2)
+    i18n (0.8.1)
+    i18n-active_record (0.2.0)
       i18n (>= 0.5.0)
     ipaddress (0.8.3)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jquery-rails (4.2.2)
+    jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.6)
     jsonapi-resources (0.8.1)
       concurrent-ruby
       rails (>= 4.0)
@@ -166,13 +164,15 @@ GEM
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
-    mime-types (2.99.3)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     monetize (1.6.0)
       money (~> 6.8)
-    money (6.8.1)
-      i18n (>= 0.6.4, <= 0.7.0)
+    money (6.8.3)
+      i18n (>= 0.6.4, < 0.9)
       sixarm_ruby_unaccent (>= 1.1.1, < 2)
     money-rails (1.8.0)
       activesupport (>= 3.0)
@@ -182,11 +182,11 @@ GEM
     multi_json (1.12.1)
     netrc (0.11.0)
     nio4r (2.0.0)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     paloma (5.0.0)
-    pg (0.19.0)
+    pg (0.20.0)
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -221,10 +221,10 @@ GEM
     request_store (1.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rest-client (1.8.0)
+    rest-client (2.0.1)
       http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rets (0.11.0)
       http-cookie (~> 1.0.0)
       httpclient (~> 2.7.0)
@@ -258,7 +258,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
