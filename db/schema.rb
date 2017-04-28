@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410171021) do
+ActiveRecord::Schema.define(version: 20170428174409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -213,9 +213,9 @@ ActiveRecord::Schema.define(version: 20170410171021) do
     t.datetime "active_from"
     t.datetime "available_to_rent_from"
     t.datetime "available_to_rent_till"
-    t.integer  "price_sale_current_cents",                      default: 0,     null: false
+    t.bigint   "price_sale_current_cents",                      default: 0,     null: false
     t.string   "price_sale_current_currency",                   default: "EUR", null: false
-    t.integer  "price_sale_original_cents",                     default: 0,     null: false
+    t.bigint   "price_sale_original_cents",                     default: 0,     null: false
     t.string   "price_sale_original_currency",                  default: "EUR", null: false
     t.integer  "price_rental_monthly_current_cents",            default: 0,     null: false
     t.string   "price_rental_monthly_current_currency",         default: "EUR", null: false
