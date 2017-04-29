@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: c4c29c1ca056182b3de3b5c1b4fd6e9a81cfd64b
+  revision: d3de2fb03818b3ee764aef3181663cbccae0ea9b
   branch: master
   specs:
     pwb (0.1.1)
@@ -29,11 +29,11 @@ GIT
 
 GIT
   remote: https://github.com/globalize/globalize
-  revision: 8daef404a33fce7d8e6bf444451335e6f4d828d2
+  revision: 6f9d3f38d132f3e5dcbe33311674e696c922d23c
   specs:
     globalize (5.1.0.beta1)
-      activemodel (>= 4.2, < 5.1)
-      activerecord (>= 4.2, < 5.1)
+      activemodel (>= 4.2, < 5.2)
+      activerecord (>= 4.2, < 5.2)
       request_store (~> 1.0)
 
 GEM
