@@ -49,5 +49,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pwb', git: 'https://github.com/etewiah/property_web_builder', branch: 'master'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
+# fog-core 1.44.0 requires xmlrpc which is not available in ruby < 2.3...
 gem 'fog-core', '1.43.0'
 
