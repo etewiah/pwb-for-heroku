@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: d3de2fb03818b3ee764aef3181663cbccae0ea9b
+  revision: 693cf4504da87351dfcce289c67e9e21e4d37e9a
   branch: master
   specs:
     pwb (0.1.1)
@@ -98,7 +98,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    cloudinary (1.7.0)
+    cloudinary (1.8.0)
       aws_cf_signer
       rest-client
     coffee-rails (4.2.1)
