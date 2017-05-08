@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: eca1e33f23b77960e50d30e9aa442ecccef86585
+  revision: 2b43f71e300adbf3d6219424a0541aa02b5a47fa
   branch: master
   specs:
     pwb (0.2.0)
@@ -195,7 +195,7 @@ GEM
     paloma (5.0.0)
     pg (0.20.0)
     puma (3.6.2)
-    rack (2.0.1)
+    rack (2.0.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.2)
