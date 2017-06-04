@@ -13,7 +13,7 @@ It is a demonstration of how the [PropertyWebBuilder](https://github.com/etewiah
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-The resulting application will be populated with some default example data including an admin user admin@propertywebbuilder.com with a password of "pwb123456".
+The resulting application will be populated with some default example data including an admin user admin@example.com with a password of "pwb123456".
 
 ### Also simple but more explicit
 
