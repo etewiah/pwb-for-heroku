@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: f4707c51443d6a2347d888682f4fd7f93329fac7
+  revision: 9b294aebe627f9427d8c54ef4d96533166d9eb8c
   branch: master
   specs:
     pwb (1.0.0)
@@ -22,7 +22,7 @@ GIT
       nokogiri
       paloma
       pg
-      rails (~> 5.0.0, >= 5.0.0.1)
+      rails (>= 5.0.0)
       responders
       rets
       ruby_odata
@@ -63,7 +63,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_hash (1.5.1)
+    active_hash (1.5.2)
       activesupport (>= 2.2.2)
     active_link_to (1.0.4)
       actionpack
@@ -90,7 +90,7 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
-    autoprefixer-rails (7.1.1)
+    autoprefixer-rails (7.1.1.2)
       execjs
     aws_cf_signer (0.1.3)
     backports (2.3.0)
@@ -147,12 +147,12 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
-    excon (0.56.0)
+    excon (0.57.0)
     execjs (2.7.0)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
-    fog-aws (1.3.0)
+    fog-aws (1.4.0)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -211,7 +211,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.5)
+    mail (2.6.6)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)
@@ -244,7 +244,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    pg (0.20.0)
+    pg (0.21.0)
     plupload-rails (1.2.1)
       rails (>= 3.1)
     public_suffix (2.0.5)
