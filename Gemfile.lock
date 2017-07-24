@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 4b83bb3b451e047b52827efeccdf8f32a3c8d760
+  revision: a3bc811bfd3211e61d2334ff67f230cec5cf11db
   branch: master
   specs:
     pwb (1.0.0)
@@ -330,7 +330,7 @@ GEM
     temple (0.8.0)
     thor (0.19.4)
     thread_safe (0.3.6)
-    tilt (2.0.7)
+    tilt (2.0.8)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
