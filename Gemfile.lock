@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 0fc3a9bb1b8ad663e549254e2cc0ecff70d66d25
+  revision: e5a088cd38a6892e0fb436f556ccfc72cef40482
   branch: master
   specs:
     pwb (1.1.1)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/globalize/globalize
-  revision: ce823d437b38472365adc01a6a46f5e1bf6a4080
+  revision: 35adbbd4928577fef701b0986f7d7d035b0d4340
   specs:
     globalize (5.1.0.beta2)
       activemodel (>= 4.2, < 5.2)
