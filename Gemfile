@@ -45,7 +45,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'capistrano'
-  gem 'capistrano-unicorn-nginx'
+  # gem 'capistrano-unicorn-nginx'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
@@ -55,9 +55,9 @@ group :development do
   gem 'capistrano-sidekiq'
   # gem 'capistrano-monit-recipes'
   # gem 'capistrano-monit-recipes', github: 'louishouette/capistrano-monit-recipes'
-
-
-
+  gem 'capistrano3-puma'
+  gem 'capistrano3-nginx'
+  gem 'capistrano-upload-config'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

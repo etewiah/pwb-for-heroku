@@ -121,9 +121,14 @@ GEM
     capistrano-sidekiq (0.20.0)
       capistrano (>= 3.9.0)
       sidekiq (>= 3.4)
-    capistrano-unicorn-nginx (4.1.0)
-      capistrano (>= 3.1)
-      sshkit (>= 1.2.0)
+    capistrano-upload-config (0.7.0)
+      capistrano (>= 3.0)
+    capistrano3-nginx (2.1.6)
+      capistrano (>= 3.0.0)
+    capistrano3-puma (3.1.1)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -360,7 +365,9 @@ DEPENDENCIES
   capistrano-rbenv-install
   capistrano-secrets-yml
   capistrano-sidekiq
-  capistrano-unicorn-nginx
+  capistrano-upload-config
+  capistrano3-nginx
+  capistrano3-puma
   coffee-rails (~> 4.2)
   fog-core (= 1.43.0)
   jbuilder (~> 2.5)
