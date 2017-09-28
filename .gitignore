@@ -18,3 +18,7 @@
 
 # Ignore uploaded images
 /public/uploads
+
+/config/deploy/production.rb
+/config/secrets.yml
+/config/database.yml
