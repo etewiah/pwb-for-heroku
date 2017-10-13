@@ -18,3 +18,5 @@
 
 # Ignore uploaded images
 /public/uploads
+
+/config/deploy/production.rb
