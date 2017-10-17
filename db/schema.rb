@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921074119) do
+ActiveRecord::Schema.define(version: 20171017082353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,40 @@ ActiveRecord::Schema.define(version: 20170921074119) do
     t.index ["first_names", "last_names"], name: "index_pwb_clients_on_first_names_and_last_names"
   end
 
+  create_table "pwb_contacts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "other_names"
+    t.integer "title", default: 0
+    t.string "primary_phone_number"
+    t.string "other_phone_number"
+    t.string "fax"
+    t.string "nationality"
+    t.string "primary_email"
+    t.string "other_email"
+    t.string "skype_id"
+    t.string "facebook_id"
+    t.string "linkedin_id"
+    t.string "twitter_id"
+    t.string "website"
+    t.string "documentation_id"
+    t.integer "documentation_type"
+    t.integer "user_id"
+    t.integer "primary_address_id"
+    t.integer "secondary_address_id"
+    t.integer "flags", default: 0, null: false
+    t.json "details", default: {}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["documentation_id"], name: "index_pwb_contacts_on_documentation_id"
+    t.index ["first_name", "last_name"], name: "index_pwb_contacts_on_first_name_and_last_name"
+    t.index ["first_name"], name: "index_pwb_contacts_on_first_name"
+    t.index ["last_name"], name: "index_pwb_contacts_on_last_name"
+    t.index ["primary_email"], name: "index_pwb_contacts_on_primary_email"
+    t.index ["primary_phone_number"], name: "index_pwb_contacts_on_primary_phone_number"
+    t.index ["title"], name: "index_pwb_contacts_on_title"
+  end
+
   create_table "pwb_content_photos", id: :serial, force: :cascade do |t|
     t.integer "content_id"
     t.string "image"
@@ -123,7 +157,7 @@ ActiveRecord::Schema.define(version: 20170921074119) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "section_key"
-    t.string "fragment_key"
+    t.string "page_part_key"
     t.index ["key"], name: "index_pwb_contents_on_key", unique: true
   end
 
@@ -208,6 +242,25 @@ ActiveRecord::Schema.define(version: 20170921074119) do
     t.datetime "updated_at", null: false
     t.index ["content_id"], name: "index_pwb_page_contents_on_content_id"
     t.index ["page_id"], name: "index_pwb_page_contents_on_page_id"
+  end
+
+  create_table "pwb_page_parts", force: :cascade do |t|
+    t.boolean "is_rails_part", default: false
+    t.boolean "show_in_editor", default: true
+    t.integer "order_in_editor"
+    t.string "page_part_key"
+    t.string "page_slug"
+    t.text "template"
+    t.json "editor_setup", default: {}
+    t.json "block_contents", default: {}
+    t.string "theme_name"
+    t.string "locale"
+    t.integer "flags", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_part_key", "page_slug"], name: "index_pwb_page_parts_on_page_part_key_and_page_slug"
+    t.index ["page_part_key"], name: "index_pwb_page_parts_on_page_part_key"
+    t.index ["page_slug"], name: "index_pwb_page_parts_on_page_slug"
   end
 
   create_table "pwb_page_translations", force: :cascade do |t|
@@ -340,17 +393,6 @@ ActiveRecord::Schema.define(version: 20170921074119) do
     t.index ["price_sale_current_cents"], name: "index_pwb_props_on_price_sale_current_cents"
     t.index ["reference"], name: "index_pwb_props_on_reference", unique: true
     t.index ["visible"], name: "index_pwb_props_on_visible"
-  end
-
-  create_table "pwb_section_translations", force: :cascade do |t|
-    t.integer "pwb_section_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "page_title", default: ""
-    t.string "link_title", default: ""
-    t.index ["locale"], name: "index_pwb_section_translations_on_locale"
-    t.index ["pwb_section_id"], name: "index_pwb_section_translations_on_pwb_section_id"
   end
 
   create_table "pwb_sections", id: :serial, force: :cascade do |t|
