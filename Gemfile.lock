@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 08f2e24fe218b9ebf13d2fe3eb19324c93940cf5
+  revision: 6a71e19498545a174f0faf2151ef9456564b2528
   specs:
     pwb (1.2.0)
       active_hash
