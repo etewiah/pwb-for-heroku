@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: a073b9e6bd14baaaf61c78bece5653ec9e028a64
+  revision: 08f2e24fe218b9ebf13d2fe3eb19324c93940cf5
   specs:
     pwb (1.2.0)
       active_hash
@@ -116,7 +116,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.2.0)
+    devise-i18n (1.3.0)
+      devise (>= 2.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.0)
