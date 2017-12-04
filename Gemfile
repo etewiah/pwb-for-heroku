@@ -54,4 +54,5 @@ gem 'pwb', git: 'https://github.com/etewiah/property_web_builder'
 gem 'paloma', github: 'fredngo/paloma'
 # fog-core 1.44.0 requires xmlrpc which is not available in ruby < 2.3...
 gem 'fog-core', '1.43.0'
+gem 'property_web_scraper', github: 'RealEstateWebTools/property_web_scraper'
 

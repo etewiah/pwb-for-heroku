@@ -8,7 +8,7 @@
   "website": "http://propertywebbuilder.com/",
   "repository": "https://github.com/etewiah/property_web_builder",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate pwb:db:seed pwb:db:seed_pages"
+    "postdeploy": "bundle exec rake db:migrate pwb:db:seed pwb:db:seed_pages property_web_scraper:db:seed"
   },
   "addons": [
     "heroku-postgresql:hobby-dev",
