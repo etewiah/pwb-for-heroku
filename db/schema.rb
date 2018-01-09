@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204110203) do
+ActiveRecord::Schema.define(version: 20180109161408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,8 @@ ActiveRecord::Schema.define(version: 20171204110203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "theme_name"
+    t.index ["company_id"], name: "index_pwb_agencies_on_company_id", unique: true
+    t.index ["company_name"], name: "index_pwb_agencies_on_company_name"
   end
 
   create_table "pwb_clients", id: :serial, force: :cascade do |t|
@@ -241,7 +243,7 @@ ActiveRecord::Schema.define(version: 20171204110203) do
     t.index ["content_id"], name: "index_pwb_content_photos_on_content_id"
   end
 
-  create_table "pwb_content_translations", id: :serial, force: :cascade do |t|
+  create_table "pwb_content_translations", force: :cascade do |t|
     t.integer "pwb_content_id", null: false
     t.string "locale", null: false
     t.datetime "created_at", null: false
@@ -335,6 +337,7 @@ ActiveRecord::Schema.define(version: 20171204110203) do
     t.string "origin_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "contact_id"
   end
 
   create_table "pwb_page_contents", force: :cascade do |t|
@@ -413,7 +416,7 @@ ActiveRecord::Schema.define(version: 20171204110203) do
     t.index ["prop_id"], name: "index_pwb_prop_photos_on_prop_id"
   end
 
-  create_table "pwb_prop_translations", id: :serial, force: :cascade do |t|
+  create_table "pwb_prop_translations", force: :cascade do |t|
     t.integer "pwb_prop_id", null: false
     t.string "locale", null: false
     t.datetime "created_at", null: false
@@ -500,17 +503,6 @@ ActiveRecord::Schema.define(version: 20171204110203) do
     t.index ["price_sale_current_cents"], name: "index_pwb_props_on_price_sale_current_cents"
     t.index ["reference"], name: "index_pwb_props_on_reference", unique: true
     t.index ["visible"], name: "index_pwb_props_on_visible"
-  end
-
-  create_table "pwb_section_translations", id: :serial, force: :cascade do |t|
-    t.integer "pwb_section_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "page_title", default: ""
-    t.string "link_title", default: ""
-    t.index ["locale"], name: "index_pwb_section_translations_on_locale"
-    t.index ["pwb_section_id"], name: "index_pwb_section_translations_on_pwb_section_id"
   end
 
   create_table "pwb_sections", id: :serial, force: :cascade do |t|
