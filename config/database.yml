@@ -83,3 +83,8 @@ production:
   database: pwb-for-heroku_production
   username: pwb-for-heroku
   password: <%= ENV['PWB-FOR-HEROKU_DATABASE_PASSWORD'] %>
+
+
+precompile:
+  <<: *default
+  database: pwb-for-heroku_development
