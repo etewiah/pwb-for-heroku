@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: e6191304574c5e92f884327a2d60ec43db9e2f52
+  revision: 6a09a8e06f313654cb7706a6d9ec1f641c1b9e74
   specs:
     pwb (1.3.0)
       active_hash
@@ -231,7 +231,7 @@ GEM
       monetize (~> 1.7.0)
       money (~> 6.9.0)
       railties (>= 3.0)
-    multi_json (1.13.0)
+    multi_json (1.13.1)
     multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.2.0)
