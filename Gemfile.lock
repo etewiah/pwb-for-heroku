@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 6a09a8e06f313654cb7706a6d9ec1f641c1b9e74
+  revision: efeeef0ca418b2ae542f3ff4a172e4c88ee7acd9
   specs:
     pwb (1.3.0)
       active_hash
@@ -100,7 +100,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    autoprefixer-rails (7.2.4)
+    autoprefixer-rails (7.2.5)
       execjs
     aws_cf_signer (0.1.3)
     backports (2.3.0)
