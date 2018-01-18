@@ -30,7 +30,7 @@ Rails.application.configure do
   # when I try to compress js files with the above I get the ff error:
   # ExecJS::RuntimeError: SyntaxError: Unexpected token punc «(», expected punc «:»
   # config.assets.js_compressor = :closure
-  config.assets.js_compressor = :yui
+  # config.assets.js_compressor = :yui
 
 
   config.assets.css_compressor = :sass
