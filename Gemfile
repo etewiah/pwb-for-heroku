@@ -43,6 +43,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'closure-compiler'
+  gem 'yui-compressor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -55,4 +57,3 @@ gem 'paloma', github: 'fredngo/paloma'
 # fog-core 1.44.0 requires xmlrpc which is not available in ruby < 2.3...
 gem 'fog-core', '1.43.0'
 gem 'property_web_scraper', github: 'RealEstateWebTools/property_web_scraper'
-
