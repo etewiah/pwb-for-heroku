@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: e16817d6f369d338a590ebd3f4ee3785675f1b4a
+  revision: 2c1262774d40b89928d14ddbd8bfa6f936e58d9c
   specs:
     pwb (1.3.0)
       active_hash
@@ -36,6 +36,7 @@ GIT
       firebase
       flag_shih_tzu
       fog-aws
+      geocoder
       globalize (~> 5.1.0.beta2)
       globalize-accessors
       i18n-active_record
@@ -130,7 +131,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    devise (4.4.0)
+    devise (4.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
@@ -148,7 +149,7 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
-    firebase (0.2.7)
+    firebase (0.2.8)
       googleauth
       httpclient (>= 2.5.3)
       json
@@ -169,6 +170,7 @@ GEM
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
+    geocoder (1.4.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     globalize (5.1.0)
@@ -189,7 +191,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httpclient (2.7.2)
-    i18n (0.9.1)
+    i18n (0.9.3)
       concurrent-ruby (~> 1.0)
     i18n-active_record (0.2.2)
       i18n (>= 0.5.0)
@@ -226,7 +228,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.11.1)
+    minitest (5.11.3)
     monetize (1.7.0)
       money (~> 6.9)
     money (6.10.1)

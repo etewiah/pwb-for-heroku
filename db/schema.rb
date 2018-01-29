@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109161408) do
+ActiveRecord::Schema.define(version: 20180118190838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -171,6 +171,15 @@ ActiveRecord::Schema.define(version: 20180109161408) do
     t.string "theme_name"
     t.index ["company_id"], name: "index_pwb_agencies_on_company_id", unique: true
     t.index ["company_name"], name: "index_pwb_agencies_on_company_name"
+  end
+
+  create_table "pwb_authorizations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "provider"
+    t.string "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pwb_authorizations_on_user_id"
   end
 
   create_table "pwb_clients", id: :serial, force: :cascade do |t|
