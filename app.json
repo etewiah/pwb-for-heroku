@@ -12,8 +12,7 @@
   },
   "addons": [
     "heroku-postgresql:hobby-dev",
-    "cloudinary:starter",
-    "sendgrid:starter"
+    "cloudinary:starter"
   ],
   "env": {
     "LANG": "en_US.UTF-8",
