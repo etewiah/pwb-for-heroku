@@ -21,7 +21,8 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 86fdab6da155d36b9b1d776c622ad51de9084d2a
+  revision: c5514742856360d88c886e1e9e812d99f16b466b
+  branch: 2018-2feb-vuetify-setup
   specs:
     pwb (1.3.0)
       active_hash
@@ -137,7 +138,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.5.0)
+    devise-i18n (1.5.1)
       devise (>= 3.4)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
@@ -264,7 +265,7 @@ GEM
     pg (0.21.0)
     public_suffix (3.0.1)
     puma (3.10.0)
-    rack (2.0.3)
+    rack (2.0.4)
     rack-cors (1.0.2)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
