@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/RealEstateWebTools/property_web_scraper.git
-  revision: 6f6d25ef2014338d25abbbf5462d1d57ed278135
+  revision: b8a49979ce89d4658007bfa160db5fe46efb1f8e
   specs:
     property_web_scraper (0.1.0)
       active_hash
@@ -12,6 +12,8 @@ GIT
       nokogiri
       rack-cors
       rails (>= 5.0.0)
+      rets
+      ruby_odata
 
 GIT
   remote: git://github.com/fredngo/paloma.git
@@ -21,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: f4656fbc8bd83027132ed97c744d74b240fe5757
+  revision: db5f8e12e5f88b98552c3967e917e201e3dab677
   specs:
     pwb (1.3.0)
       active_hash
@@ -191,7 +193,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httpclient (2.7.2)
-    i18n (0.9.4)
+    i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     i18n-active_record (0.2.2)
       i18n (>= 0.5.0)
