@@ -11574,7 +11574,7 @@ return jQuery;
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
+// require_tree .
 
 // require jquery.turbolinks
 
