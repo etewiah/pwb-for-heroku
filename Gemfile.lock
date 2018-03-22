@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 7611a84e92035d7a39d04edd6c1ffd4ce0437484
+  revision: 14cab02258dc8fbdfa083fcb6e2c937be25ecc9f
   branch: 2018-2feb-vuetify-setup
   specs:
     pwb (1.3.0)
@@ -49,6 +49,7 @@ GIT
       omniauth
       omniauth-facebook
       pg (< 1.0)
+      rack-cors
       rails (>= 5.1.0)
       responders
       rets
@@ -217,7 +218,7 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
-    loofah (2.2.1)
+    loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.0)
