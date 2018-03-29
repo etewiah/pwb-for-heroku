@@ -80,9 +80,10 @@ test:
 #
 production:
   <<: *default
-  database: pwb-for-heroku_production
-  username: pwb-for-heroku
-  password: <%= ENV['PWB-FOR-HEROKU_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: pwb-for-heroku_production
+  # username: pwb-for-heroku
+  # password: <%= ENV['PWB-FOR-HEROKU_DATABASE_PASSWORD'] %>
 
 
 precompile:
