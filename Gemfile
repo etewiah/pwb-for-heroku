@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-ruby '2.3.3' #for doku deploy
+ruby '2.5.1' #for doku deploy
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
