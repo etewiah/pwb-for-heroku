@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: 4c6979cc71640d92de9509838268fe71e3da93c9
+  revision: 053a21f2117f147fbeea03b9281e712834cf5eea
   branch: 2018-2feb-vuetify-setup
   specs:
     pwb (1.3.0)

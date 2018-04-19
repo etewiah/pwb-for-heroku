@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # below allows a rails app using pwb to provide its own 
+  # vue layout
+  config.x.pwb.use_root_vue = true
+
+
   # http://blog.bigbinary.com/2015/10/31/rails-5-allows-setting-custom-http-headers-for-assets.html
   # 
   config.public_file_server.headers = {
