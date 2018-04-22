@@ -13,31 +13,31 @@
       <v-divider></v-divider>
       <MainNav></MainNav>
     </v-navigation-drawer>
-    <v-toolbar app :clipped-left="clipped">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn>
-          <v-menu offset-y>
-            <v-btn icon light slot="activator">
-              <!-- {{$store.state.currentLocale}} -->
-              <v-icon light>language</v-icon>
-            </v-btn>
-            <v-list>
-              <v-list-tile v-for="lang in locales" :key="lang" @click.native="changeLocale(lang)">
-                <v-list-tile-title>
-                  <a>
+    <v-content class="" style="background-color: white;">
+      <v-toolbar dark color="cyan" flat app :clipped-left="clipped">
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-title v-text="title"></v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items dark color="cyan">
+          <v-btn dark color="cyan">
+            <v-menu offset-y>
+              <v-btn dark color="cyan" icon slot="activator">
+                <!-- {{$store.state.currentLocale}} -->
+                <v-icon light>language</v-icon>
+              </v-btn>
+              <v-list>
+                <v-list-tile v-for="lang in locales" :key="lang" @click.native="changeLocale(lang)">
+                  <v-list-tile-title>
+                    <a>
                   {{lang}}
                 </a>
-                </v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-        </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
-    <v-content>
+                  </v-list-tile-title>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
       <router-view/>
     </v-content>
     <v-navigation-drawer temporary :right="right" v-model="rightDrawer" fixed app>
@@ -51,7 +51,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
-<!--       <strong>Property</strong><span style="color: gray;">Web</span><strong class="navy--text text--darken-1">Builder</strong> &copy; {{CopyRightYear}} -->
+      <!--       <strong>Property</strong><span style="color: gray;">Web</span><strong class="navy--text text--darken-1">Builder</strong> &copy; {{CopyRightYear}} -->
     </v-footer>
   </v-app>
 </template>
@@ -94,5 +94,4 @@ export default {
     // this.$i18n.locale = this.$store.state.currentLocale
   }
 };
-
 </script>

@@ -1,50 +1,46 @@
 <template>
-  <v-layout row>
-    <v-flex xs12>
-      <v-card>
-        <v-card-title primary-title>
-          <div>
-            <h4 class="headline mb-0"></h4>
-          </div>
-        </v-card-title>
-        <v-card-text>
-          <form @submit.prevent="onUpdateProperty">
-            <v-layout row>
-              <FormSubmitter :hasPendingChanges="hasPendingChanges" v-on:changesCanceled="changesCanceled"></FormSubmitter>
-            </v-layout>
-            <v-layout wrap row>
-              <v-flex xs12 sm3>
-                <template v-for="(fieldDetails) in mainInputFields1">
-                  <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
-                </template>
-              </v-flex>
-              <v-flex xs12 sm3>
-                <template v-for="(fieldDetails) in mainInputFields2">
-                  <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
-                </template>
-              </v-flex>
-              <v-flex xs12 sm3>
-                <template v-for="(fieldDetails) in mainInputFields3">
-                  <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
-                </template>
-              </v-flex>
-              <v-flex xs12 sm3>
-                <template v-for="(fieldDetails) in mainInputFields4">
-                  <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
-                </template>
-              </v-flex>
-            </v-layout>
-            <v-layout row>
-              <FormSubmitter :hasPendingChanges="hasPendingChanges" v-on:changesCanceled="changesCanceled"></FormSubmitter>
-            </v-layout>
-          </form>
-        </v-card-text>
-        <v-card-actions>
-          <!-- <v-btn flat color="orange">Share</v-btn> -->
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <v-card class="elevation-0">
+    <v-card-title primary-title>
+      <div>
+        <h4 class="headline mb-0"></h4>
+      </div>
+    </v-card-title>
+    <v-card-text>
+      <form @submit.prevent="onUpdateProperty">
+        <v-layout row>
+          <FormSubmitter :hasPendingChanges="hasPendingChanges" v-on:changesCanceled="changesCanceled"></FormSubmitter>
+        </v-layout>
+        <v-layout wrap row>
+          <v-flex xs12 sm3>
+            <template v-for="(fieldDetails) in mainInputFields1">
+              <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
+            </template>
+          </v-flex>
+          <v-flex xs12 sm3>
+            <template v-for="(fieldDetails) in mainInputFields2">
+              <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
+            </template>
+          </v-flex>
+          <v-flex xs12 sm3>
+            <template v-for="(fieldDetails) in mainInputFields3">
+              <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
+            </template>
+          </v-flex>
+          <v-flex xs12 sm3>
+            <template v-for="(fieldDetails) in mainInputFields4">
+              <FieldResolver :fieldDetails="fieldDetails" :fieldOptions="fieldOptions" :cancelPendingChanges="cancelPendingChanges" v-bind:resourceModel="currentProperty"></FieldResolver>
+            </template>
+          </v-flex>
+        </v-layout>
+        <v-layout row>
+          <FormSubmitter :hasPendingChanges="hasPendingChanges" v-on:changesCanceled="changesCanceled"></FormSubmitter>
+        </v-layout>
+      </form>
+    </v-card-text>
+    <v-card-actions>
+      <!-- <v-btn flat color="orange">Share</v-btn> -->
+    </v-card-actions>
+  </v-card>
 </template>
 <script>
 import FieldResolver from '../../../mgmt/components/form-fields/FieldResolver'
@@ -248,5 +244,4 @@ export default {
     },
   }
 }
-
 </script>
