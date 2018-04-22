@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title><%= yield(:page_title) %></title>
+    <%= yield(:page_head) %>
+    <%# display_meta_tags site: @current_website.tenant_display_name %>
+    <%= stylesheet_link_tag    "pwb/themes/default", media: "all" %>
+    <style>
+      <%= custom_styles "default" %>
+    </style>
+    <%= javascript_include_tag "pwb/application", async: false %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" async: true ></script>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="tnt-body default-theme <%= @current_website.body_style %>">
+    <%# render @current_website.views_folder + '/shared/main_mobile_menu' %>
+    <!-- MAIN WRAPPER -->
+    <div id="main-vue" class="body-wrap sticky-wrap <%= @current_website.body_style %>">
+      <%= render :partial => '/pwb/header', :locals => { not_devise: true }  %>
+      <div class="sticky-body">
+        <%= yield %>
+      </div>
+      <%= render :partial => '/pwb/footer', :locals => {}  %>
+      <%= render :partial => '/pwb/analytics', :locals => {}  %>
+    </div>
+    <%= insert_paloma_hook %>
+    <noscript id="deferred-styles">
+      <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+      <!-- Google Font -->
+      <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+              var addStylesNode = document.getElementById("deferred-styles");
+              var replacement = document.createElement("div");
+              replacement.innerHTML = addStylesNode.textContent;
+              document.body.appendChild(replacement)
+              addStylesNode.parentElement.removeChild(addStylesNode);
+            };
+            var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+            if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+            else window.addEventListener('load', loadDeferredStyles);
+    </script>
+    <%= yield(:page_script) %>
+  </body>
+</html>
