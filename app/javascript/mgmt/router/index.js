@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '../../mgmt/components/HelloWorld'
 import PropertiesList from '../../mgmt/pages/properties/PropertiesList'
-// import SingleProperty from '../../mgmt/pages/properties/SingleProperty'
+import SingleProperty from '../../mgmt/pages/properties/SingleProperty'
 // import PropertyLabels from '../../mgmt/pages/properties/PropertyLabels'
-// import SinglePropertyTab from '../../mgmt/pages/properties/SinglePropertyTab'
-// import GenericContainer from '../../mgmt/pages/GenericContainer'
+import SinglePropertyTab from '../../mgmt/pages/properties/SinglePropertyTab'
+import GenericContainer from '../../mgmt/pages/GenericContainer'
 // import NewProperty from '../../mgmt/pages/properties/NewProperty'
 // import SitePageDetails from '../../mgmt/pages/site-pages/SitePageDetails'
 // import WebsiteSettings from '../../mgmt/pages/admin/website/Settings'
@@ -107,48 +107,48 @@ export default new Router({
     //       // }]
     //     }
     //   ]
-    // }, {
-    //   path: '/properties',
-    //   name: 'properties',
-    //   redirect: {
-    //     name: 'propertiesList'
-    //   }
-    // }, {
-    //   path: '/properties/view',
-    //   component: GenericContainer,
-    //   children: [{
-    //     path: '',
-    //     name: 'propertiesList',
-    //     component: PropertiesList
-    //   }, {
-    //     path: ':id',
-    //     component: SingleProperty,
-    //     children: [{
-    //       name: 'singleProperty',
-    //       path: '',
-    //       redirect: to => {
-    //         const {
-    //           params
-    //         } = to
-    //         // const { hash, params, query } = to
-    //         // This will not trigger if I route to 'singleProperty' within app
-    //         return {
-    //           name: 'singlePropertyTab',
-    //           params: {
-    //             tabName: 'general',
-    //             id: params.id
-    //           }
-    //         }
-    //         // if (query.to === 'foo') {
-    //         //   return { path: '/foo', query: null }
-    //         // }
-    //       } // redirect: { name: 'singlePropertyTab', params: {tabName: 'general'} }
-    //     }, {
-    //       name: 'singlePropertyTab',
-    //       path: ':tabName',
-    //       component: SinglePropertyTab
-    //     }]
-    //   }]
+    }, {
+      path: '/properties',
+      name: 'properties',
+      redirect: {
+        name: 'propertiesList'
+      }
+    }, {
+      path: '/properties/view',
+      component: GenericContainer,
+      children: [{
+        path: '',
+        name: 'propertiesList',
+        component: PropertiesList
+      }, {
+        path: ':id',
+        component: SingleProperty,
+        children: [{
+          name: 'singleProperty',
+          path: '',
+          redirect: to => {
+            const {
+              params
+            } = to
+            // const { hash, params, query } = to
+            // This will not trigger if I route to 'singleProperty' within app
+            return {
+              name: 'singlePropertyTab',
+              params: {
+                tabName: 'general',
+                id: params.id
+              }
+            }
+            // if (query.to === 'foo') {
+            //   return { path: '/foo', query: null }
+            // }
+          } // redirect: { name: 'singlePropertyTab', params: {tabName: 'general'} }
+        }, {
+          name: 'singlePropertyTab',
+          path: ':tabName',
+          component: SinglePropertyTab
+        }]
+      }]
     // },
     // {
     //   path: '/properties/new',

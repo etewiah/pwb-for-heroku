@@ -5,13 +5,13 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag 'mgmt' %>
     <%= javascript_pack_tag 'mgmt' %>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   </head>
 
   <body>
     <div id="mgmt-app"></div>
     <%= yield %>
     <noscript id="deferred-styles">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
       <!-- Google Font -->
       <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     </noscript>
