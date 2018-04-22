@@ -53,28 +53,28 @@ export default {
     mainNavItems() {
       // let mainNavItems = []
       let mainNavItems = this.$store.state.navigationStore.mainNavItems
-      // let adminPageLinks = this.$store.state.pages
-      // if (adminPageLinks.length > 0) {
-      //   // TODO - sort adminPageLinks
-      //   let pagesNav = _.find(mainNavItems, { icon: "pages" })
-      //   // _.find(mainNavItems, "icon", "pages")
-      //   // _.find(mainNavItems, "tabTitleKey", "adminSections.pages")
-      //   // debugger
-      //   let linkTitleKey = "link_title_en"
+      let adminPageLinks = this.$store.state.pages
+      if (adminPageLinks.length > 0) {
+        // TODO - sort adminPageLinks
+        let pagesNav = _.find(mainNavItems, { icon: "pages" })
+        // _.find(mainNavItems, "icon", "pages")
+        // _.find(mainNavItems, "tabTitleKey", "adminSections.pages")
+        // debugger
+        let linkTitleKey = "link_title_en"
 
-      //   adminPageLinks.forEach(function(page) {
-      //     console.log(page)
-      //     let pageNav = {}
-      //     pageNav.href = "sitePageDetailsDefault"
-      //     pageNav.text = page[linkTitleKey]
-      //     pageNav.icon = "domain"
-      //     pageNav.router = true
-      //     pageNav.params = {pageName: page["page_slug"]}
-      //     pagesNav.childItems.push(pageNav)
-      //     // debugger
-      //   })
+        adminPageLinks.forEach(function(page) {
+          console.log(page)
+          let pageNav = {}
+          pageNav.href = "sitePageDetailsDefault"
+          pageNav.text = page[linkTitleKey]
+          pageNav.icon = "domain"
+          pageNav.router = true
+          pageNav.params = {pageName: page["page_slug"]}
+          pagesNav.childItems.push(pageNav)
+          // debugger
+        })
 
-      // }
+      }
       return mainNavItems
 
       //       var pagesNav = leftNavItems.findBy("tabTitleKey", "adminSections.pages");

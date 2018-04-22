@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: "#mgmt-app",
     store,
+    router,
     render: h => h(App)
   })
 

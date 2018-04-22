@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '../../mgmt/components/HelloWorld'
 // import PropertiesList from '@/pages/properties/PropertiesList'
 // import SingleProperty from '@/pages/properties/SingleProperty'
 // import PropertyLabels from '@/pages/properties/PropertyLabels'
@@ -23,11 +23,11 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: '/admin-vue/',
-  routes: []
-  // {
-  //     path: '/',
-  //     name: 'propertiesList',
-      // component: HelloWorld
+  routes: [
+  {
+      path: '/',
+      name: 'propertiesList',
+      component: HelloWorld
     // },
     // {
     //   path: '/agency',
@@ -179,5 +179,5 @@ export default new Router({
     //   }]
     // },
 
-  // }]
+  }]
 })

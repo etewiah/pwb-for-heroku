@@ -1,28 +1,28 @@
 // initial state
 const state = {
   mainNavItems: [
-  // {
-  //     icon: 'domain',
-  //     title: 'Properties',
-  //     tabTitleKey: "adminSections.properties",
-  //     isGroupHeader: true,
-  //     childItems: [{
-  //       icon: 'domain',
-  //       text: 'List',
-  //       href: 'propertiesList',
-  //       router: true
-  //     // }, {
-  //     //   icon: 'domain',
-  //     //   text: 'Labels',
-  //     //   href: 'defaultPropertyLabel',
-  //     //   router: true
-  //     // }, {
-  //     //   icon: 'domain',
-  //     //   text: 'New Property',
-  //     //   href: 'newProperty',
-  //     //   router: true
-  //     }]
-  //   },
+  {
+      icon: 'domain',
+      title: 'Properties',
+      tabTitleKey: "adminSections.properties",
+      isGroupHeader: true,
+      childItems: [{
+        icon: 'domain',
+        text: 'List',
+        href: 'propertiesList',
+        router: true
+      // }, {
+      //   icon: 'domain',
+      //   text: 'Labels',
+      //   href: 'defaultPropertyLabel',
+      //   router: true
+      // }, {
+      //   icon: 'domain',
+      //   text: 'New Property',
+      //   href: 'newProperty',
+      //   router: true
+      }]
+    },
     // {
     //   icon: "pages",
     //   tabTitleKey: "adminSections.pages",

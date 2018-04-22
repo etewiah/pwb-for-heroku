@@ -38,7 +38,7 @@
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
-      <!-- <router-view/> -->
+      <router-view/>
     </v-content>
     <v-navigation-drawer temporary :right="right" v-model="rightDrawer" fixed app>
       <v-list>
