@@ -11,7 +11,7 @@
         </v-list>
       </v-toolbar>
       <v-divider></v-divider>
-      <!-- <MainNav></MainNav> -->
+      <MainNav></MainNav>
     </v-navigation-drawer>
     <v-toolbar app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -56,11 +56,11 @@
   </v-app>
 </template>
 <script>
-// import MainNav from "@/components/MainNav";
+import MainNav from "../mgmt/components/MainNav";
 
 export default {
   components: {
-    // MainNav
+    MainNav
   },
   data() {
     return {
