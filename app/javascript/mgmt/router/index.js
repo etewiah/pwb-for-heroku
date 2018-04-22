@@ -1,33 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '../../mgmt/components/HelloWorld'
-// import PropertiesList from '@/pages/properties/PropertiesList'
-// import SingleProperty from '@/pages/properties/SingleProperty'
-// import PropertyLabels from '@/pages/properties/PropertyLabels'
-// import SinglePropertyTab from '@/pages/properties/SinglePropertyTab'
-// import GenericContainer from '@/pages/GenericContainer'
-// import NewProperty from '@/pages/properties/NewProperty'
-// import SitePageDetails from '@/pages/site-pages/SitePageDetails'
-// import WebsiteSettings from '@/pages/admin/website/Settings'
-// import WebsiteLanguages from '@/pages/admin/website/Languages'
-// import WebsiteCss from '@/pages/admin/website/Sitecss'
-// import WebsiteFooter from '@/pages/admin/website/Footer'
-// import WebsiteFooter2 from '@/pages/admin/website/Footer2'
-// import Agency from '@/pages/Agency'
-// import AgencyDetails from '@/pages/agency/AgencyDetails'
-// import AgencyLocation from '@/pages/agency/AgencyLocation'
+import PropertiesList from '../../mgmt/pages/properties/PropertiesList'
+// import SingleProperty from '../../mgmt/pages/properties/SingleProperty'
+// import PropertyLabels from '../../mgmt/pages/properties/PropertyLabels'
+// import SinglePropertyTab from '../../mgmt/pages/properties/SinglePropertyTab'
+// import GenericContainer from '../../mgmt/pages/GenericContainer'
+// import NewProperty from '../../mgmt/pages/properties/NewProperty'
+// import SitePageDetails from '../../mgmt/pages/site-pages/SitePageDetails'
+// import WebsiteSettings from '../../mgmt/pages/admin/website/Settings'
+// import WebsiteLanguages from '../../mgmt/pages/admin/website/Languages'
+// import WebsiteCss from '../../mgmt/pages/admin/website/Sitecss'
+// import WebsiteFooter from '../../mgmt/pages/admin/website/Footer'
+// import WebsiteFooter2 from '../../mgmt/pages/admin/website/Footer2'
+// import Agency from '../../mgmt/pages/Agency'
+// import AgencyDetails from '../../mgmt/pages/agency/AgencyDetails'
+// import AgencyLocation from '../../mgmt/pages/agency/AgencyLocation'
 
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: '/admin-vue/',
+  base: '/mgmt/',
   routes: [
   {
       path: '/',
       name: 'propertiesList',
-      component: HelloWorld
+      component: PropertiesList
     // },
     // {
     //   path: '/agency',

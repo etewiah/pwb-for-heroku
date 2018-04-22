@@ -5,10 +5,29 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag 'mgmt' %>
     <%= javascript_pack_tag 'mgmt' %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   </head>
 
   <body>
     <div id="mgmt-app"></div>
     <%= yield %>
+    <noscript id="deferred-styles">
+      <!-- Google Font -->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+              var addStylesNode = document.getElementById("deferred-styles");
+              var replacement = document.createElement("div");
+              replacement.innerHTML = addStylesNode.textContent;
+              document.body.appendChild(replacement)
+              addStylesNode.parentElement.removeChild(addStylesNode);
+            };
+            var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+            if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+            else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
   </body>
 </html>

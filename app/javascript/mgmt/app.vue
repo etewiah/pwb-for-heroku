@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer dark :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app>
+    <v-navigation-drawer light :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app>
       <v-toolbar flat>
         <v-list>
           <v-list-tile>
