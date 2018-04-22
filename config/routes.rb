@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   mount Pwb::Engine => '/'
   mount PropertyWebScraper::Engine => '/io/'
 
+  authenticate :user do
+    get '/mgmt' => 'mgmt#show'
+  end
+
+
 end
