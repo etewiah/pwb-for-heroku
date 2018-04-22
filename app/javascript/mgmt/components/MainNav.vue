@@ -8,9 +8,9 @@
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>{{ $t(item.tabTitleKey) }}
+<!--               <v-list-tile-title>{{ $t(item.tabTitleKey) }}
               </v-list-tile-title>
-            </v-list-tile-content>
+ -->            </v-list-tile-content>
             <v-list-tile-action>
               <v-icon>keyboard_arrow_down</v-icon>
             </v-list-tile-action>
@@ -37,7 +37,9 @@
         </v-list-tile-action>
         <v-list-tile-content>
           <v-list-tile-title>
-            {{ item.title }} {{ $t(item.tabTitleKey) }}
+<!--             {{ item.title }} {{ $t(item.tabTitleKey) }}
+ --> 
+{{ item.title }}
           </v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
@@ -49,8 +51,8 @@ import _ from 'lodash'
 export default {
   computed: {
     mainNavItems() {
-      let mainNavItems = []
-      // let mainNavItems = this.$store.state.navigationStore.mainNavItems
+      // let mainNavItems = []
+      let mainNavItems = this.$store.state.navigationStore.mainNavItems
       // let adminPageLinks = this.$store.state.pages
       // if (adminPageLinks.length > 0) {
       //   // TODO - sort adminPageLinks
