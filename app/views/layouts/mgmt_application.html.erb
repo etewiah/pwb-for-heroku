@@ -3,10 +3,12 @@
   <head>
     <title>PwbForHeroku</title>
     <%= csrf_meta_tags %>
-    <%= javascript_pack_tag 'hello_vue' %>
+    <%= stylesheet_pack_tag 'mgmt' %>
+    <%= javascript_pack_tag 'mgmt' %>
   </head>
 
   <body>
+    <div id="mgmt-app"></div>
     <%= yield %>
   </body>
 </html>
