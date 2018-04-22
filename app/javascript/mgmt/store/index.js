@@ -2,7 +2,7 @@ import Vue from "vue"
 import Vuex from "vuex"
 import axios from "axios"
 import propertiesStore from "./modules/properties";
-// import propertyFeaturesStore from "./modules/property-features";
+import propertyFeaturesStore from "./modules/property-features";
 // import propertyFieldsStore from "./modules/property-fields";
 import navigationStore from "./modules/navigation";
 // import pagesStore from "./modules/pages";
@@ -15,7 +15,7 @@ const store = new Vuex.Store({
   modules: {
     propertiesStore,
     navigationStore,
-  //   propertyFeaturesStore,
+    propertyFeaturesStore,
   //   propertyFieldsStore,
   //   pagesStore,
   //   agencyStore,

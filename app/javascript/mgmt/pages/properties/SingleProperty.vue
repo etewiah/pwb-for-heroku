@@ -1,14 +1,9 @@
 <template>
   <div>
-    <v-tabs>
-      <v-tabs-bar class="cyan" dark>
-        <template v-for="(tab, index) in propertyTabs">
-          <v-tabs-item :to="{name: 'singlePropertyTab', params: {tabName: tab.tabValue}}" ripple>
-            {{ $t(tab.tabTitleKey) }}
-          </v-tabs-item>
-        </template>
-        <v-tabs-slider color="yellow"></v-tabs-slider>
-      </v-tabs-bar>
+    <v-tabs dark color="cyan" slot="extension" slider-color="yellow">
+      <v-tab class="cyan" v-for="(tab, index) in propertyTabs" :to="{name: 'singlePropertyTab', params: {tabName: tab.tabValue}}" :id="index" dark>
+        {{ $t(tab.tabTitleKey) }}
+      </v-tab>
       <v-tabs-items>
       </v-tabs-items>
     </v-tabs>
@@ -39,5 +34,4 @@ export default {
 
   }
 }
-
 </script>

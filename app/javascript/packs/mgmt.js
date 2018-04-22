@@ -3,6 +3,7 @@ import Vuetify from "vuetify"
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 import store from "../mgmt/store"
 import router from "../mgmt/router"
+import i18n from "../mgmt/i18n"
 import App from '../mgmt/app.vue'
 
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   const app = new Vue({
     el: "#mgmt-app",
+    i18n,
     store,
     router,
     render: h => h(App)

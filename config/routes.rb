@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   authenticate :user do
     get '/mgmt' => 'mgmt#show'
+    get '/mgmt/*path' => 'mgmt#show'
   end
 
 

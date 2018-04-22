@@ -3,6 +3,7 @@
     "@rails/webpacker": "3.4",
     "axios": "^0.18.0",
     "vue": "^2.5.16",
+    "vue-i18n": "^7.6.0",
     "vue-loader": "^14.2.2",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.16",
