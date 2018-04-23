@@ -1,5 +1,5 @@
 <template>
-  <v-card class="elevation-0">
+  <v-card class="ma-2 mr-4">
     <v-card-title primary-title>
       <div>
         <h4 class="headline mb-0"></h4>

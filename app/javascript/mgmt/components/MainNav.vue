@@ -1,5 +1,5 @@
 <template>
-  <v-list class="pt-0" expand>
+  <v-list class="pt-0" style="background: #f5f5f5;" expand>
     <template v-for="(item, index) in mainNavItems">
       <template v-if="item.isGroupHeader">
         <v-list-group :value="true" expand v-bind:key="item.title">

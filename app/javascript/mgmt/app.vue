@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-navigation-drawer light :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app>
-      <v-toolbar flat>
+      <v-toolbar dark color="cyan" flat>
         <v-list>
           <v-list-tile>
             <v-list-tile-title>
@@ -13,8 +13,8 @@
       <v-divider></v-divider>
       <MainNav></MainNav>
     </v-navigation-drawer>
-    <v-content class="" style="background-color: white;">
-      <v-toolbar dark color="cyan" flat app :clipped-left="clipped">
+    <v-content class="" style="">
+      <v-toolbar dark color="cyan"  app :clipped-left="clipped">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title v-text="title"></v-toolbar-title>
         <v-spacer></v-spacer>
@@ -50,9 +50,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-footer :fixed="fixed" app>
-      <!--       <strong>Property</strong><span style="color: gray;">Web</span><strong class="navy--text text--darken-1">Builder</strong> &copy; {{CopyRightYear}} -->
-    </v-footer>
+<!--     <v-footer :fixed="fixed" app>
+      <strong>Property</strong><span style="color: gray;">Web</span><strong class="navy--text text--darken-1">Builder</strong> &copy; {{CopyRightYear}}
+    </v-footer> -->
   </v-app>
 </template>
 <script>
