@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dokku": {
-      "postdeploy": "bundle exec rake db:migrate pwb:db:seed pwb:db:seed_pages property_web_scraper:db:seed"
+      "postdeploy": "bundle exec rake db:migrate"
     },
     "postdeploy": "bundle exec rake db:migrate pwb:db:seed pwb:db:seed_pages property_web_scraper:db:seed"
   },
