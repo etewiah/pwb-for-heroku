@@ -1,0 +1,12 @@
+{
+  "application.js": "/packs/application-23650ef5467ca063d3de.js",
+  "application.js.map": "/packs/application-23650ef5467ca063d3de.js.map",
+  "hello_vue.css": "/packs/hello_vue-f763c0da1f6172130f19da9c3f631fef.css",
+  "hello_vue.css.map": "/packs/hello_vue-f763c0da1f6172130f19da9c3f631fef.css.map",
+  "hello_vue.js": "/packs/hello_vue-8df8548594fd2a65b1a8.js",
+  "hello_vue.js.map": "/packs/hello_vue-8df8548594fd2a65b1a8.js.map",
+  "mgmt.css": "/packs/mgmt-bbe560b77cc772d0708cc25e1f15497b.css",
+  "mgmt.css.map": "/packs/mgmt-bbe560b77cc772d0708cc25e1f15497b.css.map",
+  "mgmt.js": "/packs/mgmt-aa388c7a1226faf38275.js",
+  "mgmt.js.map": "/packs/mgmt-aa388c7a1226faf38275.js.map"
+}
