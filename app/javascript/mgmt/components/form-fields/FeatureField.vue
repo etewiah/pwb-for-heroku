@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-// import SwitchField from '@/components/form-fields/SwitchField'
+// import SwitchField from '../../../mgmt/components/form-fields/SwitchField'
 // import { required, minLength } from 'vuelidate/lib/validators'
 // import _ from 'lodash'
 export default {
