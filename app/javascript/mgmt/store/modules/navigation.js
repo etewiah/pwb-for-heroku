@@ -9,31 +9,37 @@ const state = {
       isGroupHeader: true,
       childItems: [{
         icon: 'domain',
-        text: 'List',
+        // text: 'List',
+        exact: true,
+        titleKey: 'adminSections.list',
         href: 'propertiesList',
         router: true
       }, {
         icon: 'domain',
-        text: 'Labels',
+        // text: 'Labels',
+        exact: true,
+        titleKey: 'adminSections.labels',
         href: 'defaultPropertyLabel',
         router: true
       }, {
         icon: 'domain',
-        text: 'New Property',
+        // text: 'New Property',
+        exact: true,
+        titleKey: 'newProperty',
         href: 'newProperty',
         router: true
       }]
     },
-    {
-      icon: "pages",
-      tabTitleKey: "adminSections.pages",
-      // tabRoute: "admin.pages",
-      // subMenuItems: [],
-      // title: 'Attractions',
-      isGroupHeader: true,
-      childItems: []
+    // {
+    //   icon: "pages",
+    //   tabTitleKey: "adminSections.pages",
+    //   // tabRoute: "admin.pages",
+    //   // subMenuItems: [],
+    //   // title: 'Attractions',
+    //   isGroupHeader: true,
+    //   childItems: []
 
-    },
+    // },
     {
       icon: "settings",
       title: 'Website',
@@ -41,22 +47,30 @@ const state = {
       isGroupHeader: true,
       childItems: [{
         icon: 'tv',
-        text: 'Settings',
+        // text: 'Settings',
+        exact: true,
+        titleKey: 'adminSections.websiteSettings',
         href: 'adminWebsiteSettings',
         router: true
       }, {
         icon: 'record_voice_over',
-        text: 'Language',
+        // text: 'Language',
+        exact: true,
+        titleKey: 'adminSections.list',
         href: 'adminWebsiteLanguages',
         router: true
       }, {
         icon: 'record_voice_over',
-        text: 'Site CSS',
+        // text: 'Site CSS',
+        exact: true,
+        titleKey: 'adminSections.list',
         href: 'adminWebsiteCss',
         router: true
       }, {
         icon: 'vertical_align_bottom',
-        text: 'Footer',
+        // text: 'Footer',
+        exact: true,
+        titleKey: 'adminSections.list',
         href: 'adminWebsiteFooter',
         router: true
       }, {

@@ -3,27 +3,25 @@
     <template v-for="(item, index) in mainNavItems">
       <template v-if="item.isGroupHeader">
         <v-list-group :value="true" expand v-bind:key="item.title">
-          <v-list-tile slot="item" @click="">
+
+          <v-list-tile exact slot="activator" @click="">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>{{ $t(item.tabTitleKey) }}
+              <v-list-tile-title>{{ $t(item.tabTitleKey)}}
               </v-list-tile-title>
             </v-list-tile-content>
-            <v-list-tile-action>
-              <v-icon>keyboard_arrow_down</v-icon>
-            </v-list-tile-action>
           </v-list-tile>
-          <v-list-tile v-for="subItem in item.childItems" v-bind:key="subItem.title" :href="subItem.href" :to="{name: subItem.href, params: subItem.params}" expand>
+          <v-list-tile exact="subItem.exact" class="pl-3" v-for="subItem in item.childItems" v-bind:key="subItem.title" :href="subItem.href" :to="{name: subItem.href, params: subItem.params}" expand>
             <v-list-tile-action>
               <v-icon light v-html="subItem.icon"></v-icon>
             </v-list-tile-action>
-            <v-list-tile-content>
+<!--             <v-list-tile-content>
               <v-list-tile-title v-html="subItem.text"></v-list-tile-title>
-            </v-list-tile-content>
+            </v-list-tile-content> -->
             <v-list-tile-content>
-              <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ $t(subItem.titleKey) }}</v-list-tile-title>
             </v-list-tile-content>
             <v-list-tile-action>
               <v-icon>{{ subItem.action }}</v-icon>

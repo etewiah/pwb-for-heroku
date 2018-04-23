@@ -78,13 +78,13 @@ export default {
   name: "App",
   methods: {
     changeLocale(to) {
-      // // global.helper.ls.set('locale', to)
-      // this.$store.commit('setCurrentLocale', to)
-      // this.$i18n.locale = to
-      // // Currently localStorage state only gets updated when locale is changed
-      // localStorage.setItem('pwb_store', JSON.stringify(this.$store.state))
-      // // Consider updating regularly by using the Vuex subscribe method:
-      // // https://www.mikestreety.co.uk/blog/vue-js-using-localstorage-with-the-vuex-store
+      // global.helper.ls.set('locale', to)
+      this.$store.commit('setCurrentLocale', to)
+      this.$i18n.locale = to
+      // Currently localStorage state only gets updated when locale is changed
+      localStorage.setItem('pwb_store', JSON.stringify(this.$store.state))
+      // Consider updating regularly by using the Vuex subscribe method:
+      // https://www.mikestreety.co.uk/blog/vue-js-using-localstorage-with-the-vuex-store
     },
   },
   mounted: function() {
