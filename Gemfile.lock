@@ -272,6 +272,8 @@ GEM
     puma (3.10.0)
     rack (2.0.5)
     rack-cors (1.0.2)
+    rack-mini-profiler (1.0.0)
+      rack (>= 1.2.0)
     rack-proxy (0.6.4)
       rack
     rack-test (1.0.0)
@@ -398,6 +400,7 @@ DEPENDENCIES
   property_web_scraper!
   puma (~> 3.0)
   pwb!
+  rack-mini-profiler
   rails (~> 5.1.1)
   sass-rails (~> 5.0)
   spring
