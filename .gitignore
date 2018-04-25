@@ -18,6 +18,8 @@
 
 # Ignore uploaded images
 /public/uploads
+# And page caches in dev
+/public/localhost
 
 /config/deploy/production.rb
 #/public/packs

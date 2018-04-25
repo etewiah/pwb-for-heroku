@@ -60,3 +60,4 @@ gem 'fog-core', '1.43.0'
 gem 'property_web_scraper', github: 'RealEstateWebTools/property_web_scraper'
 
 gem 'webpacker'
+gem 'actionpack-page_caching'
