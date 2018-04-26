@@ -24,6 +24,7 @@
 /config/deploy/production.rb
 #/public/packs
 /public/packs-test
+/public/packs-dev
 /node_modules
 yarn-debug.log*
 .yarn-integrity
