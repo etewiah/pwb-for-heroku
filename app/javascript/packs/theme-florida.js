@@ -8,7 +8,7 @@
 import Vue from 'vue'
 import Vuetify from "vuetify"
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
-import App from '../theme-vienna/App.vue'
+import App from '@jsroot/packs/theme-florida/App.vue'
 import store from "../theme-vienna/store"
 import router from "../theme-vienna/router"
 import i18n from "../theme-vienna/i18n"
