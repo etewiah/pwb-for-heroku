@@ -1,0 +1,10 @@
+# bundle exec rake pwb:import_from_urls
+import_host_data: { 
+  slug: 'laventa-mallorca', 
+  scraper_name: 'inmo1', 
+  host: 'laventa-mallorca.com' 
+}
+max_photos_to_process: 1
+import_urls: [
+  "http://www.laventa-mallorca.com/en/properties/for-rent/38/shop-botique-s-arenal-2-line"
+]
