@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'pw_be/importer'
+require 'support/vcr'
 
 RSpec.describe 'Importer' do
 
@@ -25,27 +26,6 @@ RSpec.describe 'Importer' do
     end
   end
 
-  it 'imports properties using demo config correctly' do
-    VCR.use_cassette('importer/rerenting') do
-      # PwBe::Importer.import!
-      import_host_data = { slug: 're-renting', scraper_name: 'inmo1', host: 're-renting.com' }
-      existing_props = []
-      new_props = []
-      import_host = ::PropertyWebScraper::ImportHost.create!(import_host_data)
-      import_url = "http://re-renting.com/en/properties/for-rent/1/acogedor-piso-en-anton-martin"
-      creator_params = {
-        max_photos_to_process: 1,
-        locales: ["fr","it","nl"]
-      }
-
-      # PwBe::Importer.import_single_page import_url, import_host, existing_props, new_props, creator_params
-      listing = PwBe::Importer.retrieve_listing_for_url import_url, import_host
-
-      expect(listing.count_bathrooms).to eq(2)
-    end
-  end
-
-
   # it 'imports properties using demo config correctly' do
   #   VCR.use_cassette('importer/rerenting') do
   #     # PwBe::Importer.import!
@@ -53,14 +33,16 @@ RSpec.describe 'Importer' do
   #     existing_props = []
   #     new_props = []
   #     import_host = ::PropertyWebScraper::ImportHost.create!(import_host_data)
-  #     url = "http://re-renting.com/en/properties/for-rent/1/acogedor-piso-en-anton-martin"
+  #     import_url = "http://re-renting.com/en/properties/for-rent/1/acogedor-piso-en-anton-martin"
   #     creator_params = {
   #       max_photos_to_process: 1,
   #       locales: ["fr","it","nl"]
   #     }
 
-  #     PwBe::Importer.import_single_page url, import_host, existing_props, new_props, creator_params
-  #     expect(Prop.last.count_bathrooms).to eq(2)
+  #     # PwBe::Importer.import_single_page import_url, import_host, existing_props, new_props, creator_params
+  #     listing = PwBe::Importer.retrieve_listing_for_url import_url, import_host
+
+  #     expect(listing.count_bathrooms).to eq(2)
   #   end
   # end
 

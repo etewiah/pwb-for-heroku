@@ -39,6 +39,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'rspec-rails'
   gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
