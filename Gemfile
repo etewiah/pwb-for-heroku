@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'guard-rspec', require: false
   gem 'rspec-rails'
+  gem 'vcr'
 end
 
 group :development do
