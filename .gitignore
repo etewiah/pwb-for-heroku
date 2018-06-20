@@ -20,3 +20,5 @@
 /public/uploads
 
 /config/deploy/production.rb
+
+/node_modules
