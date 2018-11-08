@@ -10,10 +10,186 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130121938) do
+ActiveRecord::Schema.define(version: 20181108123821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acts_as_bookable_bookings", force: :cascade do |t|
+    t.string "bookable_type"
+    t.bigint "bookable_id"
+    t.string "booker_type"
+    t.bigint "booker_id"
+    t.integer "amount"
+    t.text "schedule"
+    t.datetime "time_start"
+    t.datetime "time_end"
+    t.datetime "time"
+    t.datetime "created_at"
+    t.index ["bookable_type", "bookable_id"], name: "index_acts_as_bookable_bookings_bookable"
+    t.index ["booker_type", "booker_id"], name: "index_acts_as_bookable_bookings_booker"
+  end
+
+  create_table "page_photo_translations", force: :cascade do |t|
+    t.integer "page_photo_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "alt_text", default: ""
+    t.index ["locale"], name: "index_page_photo_translations_on_locale"
+    t.index ["page_photo_id"], name: "index_page_photo_translations_on_page_photo_id"
+  end
+
+  create_table "page_photos", force: :cascade do |t|
+    t.integer "page_id"
+    t.string "image"
+    t.string "description"
+    t.string "folder", default: "weebrix"
+    t.integer "file_size"
+    t.json "process_options", default: {}
+    t.string "height"
+    t.string "width"
+    t.integer "sort_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "content_type"
+    t.index ["page_id"], name: "index_page_photos_on_page_id"
+  end
+
+  create_table "prop_rental_photo_translations", force: :cascade do |t|
+    t.integer "prop_rental_photo_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "alt_text", default: ""
+    t.index ["locale"], name: "index_prop_rental_photo_translations_on_locale"
+    t.index ["prop_rental_photo_id"], name: "index_prop_rental_photo_translations_on_prop_rental_photo_id"
+  end
+
+  create_table "prop_rental_photos", force: :cascade do |t|
+    t.integer "prop_rental_id"
+    t.string "image"
+    t.string "description"
+    t.string "folder", default: "weebrix"
+    t.integer "file_size"
+    t.json "process_options", default: {}
+    t.string "height"
+    t.string "width"
+    t.integer "sort_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "content_type"
+    t.index ["prop_rental_id"], name: "index_prop_rental_photos_on_prop_rental_id"
+  end
+
+  create_table "prop_rental_translations", force: :cascade do |t|
+    t.integer "prop_rental_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title", default: ""
+    t.text "description", default: ""
+    t.string "slug", default: ""
+    t.string "description_short", default: ""
+    t.string "description_meta", default: ""
+    t.string "title_meta", default: ""
+    t.string "description_summary", default: ""
+    t.string "title_summary", default: ""
+    t.index ["locale"], name: "index_prop_rental_translations_on_locale"
+    t.index ["prop_rental_id"], name: "index_prop_rental_translations_on_prop_rental_id"
+  end
+
+  create_table "prop_rentals", force: :cascade do |t|
+    t.string "reference"
+    t.integer "year_construction", default: 0, null: false
+    t.integer "count_bedrooms", default: 0, null: false
+    t.float "count_bathrooms", default: 0.0, null: false
+    t.integer "count_toilets", default: 0, null: false
+    t.integer "count_garages", default: 0, null: false
+    t.float "plot_area", default: 0.0, null: false
+    t.float "constructed_area", default: 0.0, null: false
+    t.integer "energy_rating"
+    t.float "energy_performance"
+    t.integer "flags", default: 0, null: false
+    t.boolean "furnished", default: false
+    t.boolean "reserved", default: false
+    t.boolean "highlighted", default: false
+    t.boolean "archived", default: false
+    t.boolean "visible", default: false
+    t.boolean "for_rent_daily", default: false
+    t.boolean "for_rent_monthly", default: false
+    t.boolean "for_rent_long_term", default: false
+    t.boolean "hide_map", default: false
+    t.boolean "obscure_map", default: false
+    t.datetime "deleted_at"
+    t.datetime "active_from"
+    t.datetime "available_to_rent_from"
+    t.datetime "available_to_rent_till"
+    t.integer "price_rental_monthly_low_season_cents", default: 0, null: false
+    t.string "price_rental_monthly_low_season_currency", default: "EUR", null: false
+    t.integer "price_rental_monthly_high_season_cents", default: 0, null: false
+    t.string "price_rental_monthly_high_season_currency", default: "EUR", null: false
+    t.integer "price_rental_monthly_standard_season_cents", default: 0, null: false
+    t.string "price_rental_monthly_standard_season_currency", default: "EUR", null: false
+    t.integer "price_rental_daily_low_season_cents", default: 0, null: false
+    t.string "price_rental_daily_low_season_currency", default: "EUR", null: false
+    t.integer "price_rental_daily_high_season_cents", default: 0, null: false
+    t.string "price_rental_daily_high_season_currency", default: "EUR", null: false
+    t.integer "price_rental_daily_standard_season_cents", default: 0, null: false
+    t.string "price_rental_daily_standard_season_currency", default: "EUR", null: false
+    t.integer "service_charge_yearly_cents", default: 0, null: false
+    t.string "service_charge_yearly_currency", default: "EUR", null: false
+    t.integer "price_rental_monthly_for_search_cents", default: 0, null: false
+    t.string "price_rental_monthly_for_search_currency", default: "EUR", null: false
+    t.integer "price_rental_daily_for_search_cents", default: 0, null: false
+    t.string "price_rental_daily_for_search_currency", default: "EUR", null: false
+    t.string "currency"
+    t.string "prop_state_key", default: "", null: false
+    t.string "prop_type_key", default: "", null: false
+    t.string "street_number"
+    t.string "street_name"
+    t.string "street_address"
+    t.string "postal_code"
+    t.string "province"
+    t.string "city"
+    t.string "region"
+    t.string "country"
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "area_unit", default: 0
+    t.integer "occupants", default: 1
+    t.integer "units", default: 1
+    t.string "main_video_url"
+    t.json "details", default: {}
+    t.string "neighborhood"
+    t.string "import_url"
+    t.json "related_urls", default: {}
+    t.integer "capacity"
+    t.text "schedule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "locale_content", default: {}, null: false
+    t.jsonb "categories", default: {}, null: false
+    t.string "google_place_id"
+    t.string "floor"
+    t.string "city_search_key", default: "", null: false
+    t.index ["archived"], name: "index_prop_rentals_on_archived"
+    t.index ["area_unit"], name: "index_prop_rentals_on_area_unit"
+    t.index ["categories"], name: "index_prop_rentals_on_categories", using: :gin
+    t.index ["flags"], name: "index_prop_rentals_on_flags"
+    t.index ["for_rent_daily"], name: "index_prop_rentals_on_for_rent_daily"
+    t.index ["for_rent_long_term"], name: "index_prop_rentals_on_for_rent_long_term"
+    t.index ["for_rent_monthly"], name: "index_prop_rentals_on_for_rent_monthly"
+    t.index ["highlighted"], name: "index_prop_rentals_on_highlighted"
+    t.index ["latitude", "longitude"], name: "index_prop_rentals_on_latitude_and_longitude"
+    t.index ["locale_content"], name: "index_prop_rentals_on_locale_content", using: :gin
+    t.index ["occupants"], name: "index_prop_rentals_on_occupants"
+    t.index ["price_rental_daily_for_search_cents"], name: "index_prop_rentals_on_price_rental_daily_for_search_cents"
+    t.index ["price_rental_monthly_for_search_cents"], name: "index_prop_rentals_on_price_rental_monthly_for_search_cents"
+    t.index ["reference"], name: "index_prop_rentals_on_reference"
+    t.index ["units"], name: "index_prop_rentals_on_units"
+    t.index ["visible"], name: "index_prop_rentals_on_visible"
+  end
 
   create_table "property_web_scraper_import_hosts", id: :serial, force: :cascade do |t|
     t.integer "flags", default: 0, null: false
@@ -239,6 +415,16 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.index ["title"], name: "index_pwb_contacts_on_title"
   end
 
+  create_table "pwb_content_photo_translations", force: :cascade do |t|
+    t.integer "pwb_content_photo_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "alt_text", default: ""
+    t.index ["locale"], name: "index_pwb_content_photo_translations_on_locale"
+    t.index ["pwb_content_photo_id"], name: "index_pwb_content_photo_translations_on_pwb_content_photo_id"
+  end
+
   create_table "pwb_content_photos", id: :serial, force: :cascade do |t|
     t.integer "content_id"
     t.string "image"
@@ -249,6 +435,9 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "block_key"
+    t.string "height"
+    t.string "width"
+    t.string "content_type"
     t.index ["content_id"], name: "index_pwb_content_photos_on_content_id"
   end
 
@@ -324,6 +513,7 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.integer "placement", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "locale_content", default: {}, null: false
     t.index ["flags"], name: "index_pwb_links_on_flags"
     t.index ["page_slug"], name: "index_pwb_links_on_page_slug"
     t.index ["placement"], name: "index_pwb_links_on_placement"
@@ -392,6 +582,11 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.text "raw_html", default: ""
     t.string "page_title", default: ""
     t.string "link_title", default: ""
+    t.text "description", default: ""
+    t.string "description_meta", default: ""
+    t.string "title_meta", default: ""
+    t.string "description_summary", default: ""
+    t.string "title_summary", default: ""
     t.index ["locale"], name: "index_pwb_page_translations_on_locale"
     t.index ["pwb_page_id"], name: "index_pwb_page_translations_on_pwb_page_id"
   end
@@ -409,10 +604,27 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.boolean "show_in_footer", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "locale_content", default: {}, null: false
+    t.jsonb "categories", default: {}, null: false
+    t.string "city_search_key", default: "", null: false
+    t.string "import_url"
+    t.json "related_urls", default: {}
+    t.index ["categories"], name: "index_pwb_pages_on_categories", using: :gin
     t.index ["flags"], name: "index_pwb_pages_on_flags"
+    t.index ["locale_content"], name: "index_pwb_pages_on_locale_content", using: :gin
     t.index ["show_in_footer"], name: "index_pwb_pages_on_show_in_footer"
     t.index ["show_in_top_nav"], name: "index_pwb_pages_on_show_in_top_nav"
     t.index ["slug"], name: "index_pwb_pages_on_slug", unique: true
+  end
+
+  create_table "pwb_prop_photo_translations", force: :cascade do |t|
+    t.integer "pwb_prop_photo_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "alt_text", default: ""
+    t.index ["locale"], name: "index_pwb_prop_photo_translations_on_locale"
+    t.index ["pwb_prop_photo_id"], name: "index_pwb_prop_photo_translations_on_pwb_prop_photo_id"
   end
 
   create_table "pwb_prop_photos", id: :serial, force: :cascade do |t|
@@ -424,6 +636,9 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.integer "sort_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "height"
+    t.string "width"
+    t.string "content_type"
     t.index ["prop_id"], name: "index_pwb_prop_photos_on_prop_id"
   end
 
@@ -503,6 +718,10 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area_unit", default: 0
+    t.string "neighborhood"
+    t.string "import_url"
+    t.json "related_urls", default: {}
+    t.string "slug"
     t.index ["archived"], name: "index_pwb_props_on_archived"
     t.index ["flags"], name: "index_pwb_props_on_flags"
     t.index ["for_rent_long_term"], name: "index_pwb_props_on_for_rent_long_term"
@@ -512,7 +731,7 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.index ["latitude", "longitude"], name: "index_pwb_props_on_latitude_and_longitude"
     t.index ["price_rental_monthly_current_cents"], name: "index_pwb_props_on_price_rental_monthly_current_cents"
     t.index ["price_sale_current_cents"], name: "index_pwb_props_on_price_sale_current_cents"
-    t.index ["reference"], name: "index_pwb_props_on_reference", unique: true
+    t.index ["reference"], name: "index_pwb_props_on_reference"
     t.index ["visible"], name: "index_pwb_props_on_visible"
   end
 
@@ -530,6 +749,52 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.boolean "show_in_footer", default: false
     t.string "key"
     t.index ["link_key"], name: "index_pwb_sections_on_link_key", unique: true
+  end
+
+  create_table "pwb_subscriber_props", force: :cascade do |t|
+    t.integer "prop_id"
+    t.integer "subscriber_id"
+    t.integer "flags", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flags"], name: "index_pwb_subscriber_props_on_flags"
+    t.index ["prop_id"], name: "index_pwb_subscriber_props_on_prop_id"
+    t.index ["subscriber_id"], name: "index_pwb_subscriber_props_on_subscriber_id"
+  end
+
+  create_table "pwb_subscribers", force: :cascade do |t|
+    t.integer "contact_id"
+    t.string "subscriber_token"
+    t.string "subscriber_url"
+    t.json "subscriber_details", default: {}
+    t.integer "flags", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_pwb_subscribers_on_contact_id"
+    t.index ["flags"], name: "index_pwb_subscribers_on_flags"
+  end
+
+  create_table "pwb_subscription_props", force: :cascade do |t|
+    t.integer "prop_id"
+    t.integer "subscription_id"
+    t.integer "flags", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flags"], name: "index_pwb_subscription_props_on_flags"
+    t.index ["prop_id"], name: "index_pwb_subscription_props_on_prop_id"
+    t.index ["subscription_id"], name: "index_pwb_subscription_props_on_subscription_id"
+  end
+
+  create_table "pwb_subscriptions", force: :cascade do |t|
+    t.integer "contact_id"
+    t.string "subscription_token"
+    t.string "subscription_url"
+    t.json "subscription_details", default: {}
+    t.integer "flags", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_pwb_subscriptions_on_contact_id"
+    t.index ["flags"], name: "index_pwb_subscriptions_on_flags"
   end
 
   create_table "pwb_users", id: :serial, force: :cascade do |t|
@@ -566,6 +831,17 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.index ["reset_password_token"], name: "index_pwb_users_on_reset_password_token", unique: true
   end
 
+  create_table "pwb_website_photos", force: :cascade do |t|
+    t.string "photo_key"
+    t.string "image"
+    t.string "description"
+    t.string "folder", default: "weebrix"
+    t.integer "file_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_key"], name: "index_pwb_website_photos_on_photo_key"
+  end
+
   create_table "pwb_websites", id: :serial, force: :cascade do |t|
     t.string "analytics_id"
     t.integer "analytics_id_type"
@@ -592,6 +868,103 @@ ActiveRecord::Schema.define(version: 20180130121938) do
     t.text "raw_css"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "search_config_rent", default: {}
+    t.json "search_config_buy", default: {}
+    t.json "search_config_landing", default: {}
+    t.json "admin_config", default: {}
+    t.json "styles_config", default: {}
+    t.json "imports_config", default: {}
+    t.json "whitelabel_config", default: {}
+    t.json "exchange_rates", default: {}
+    t.string "favicon_url"
+    t.string "main_logo_url"
+    t.string "maps_api_key"
+    t.string "recaptcha_key"
+    t.json "meta_tags_config", default: {}
+    t.integer "website_tenant_id"
+    t.string "chat_api_key"
+    t.string "g_search_key"
+    t.boolean "is_vac_rental_only", default: false
+  end
+
+  create_table "redirector_cases", force: :cascade do |t|
+    t.string "source", null: false
+    t.boolean "source_is_path", default: true, null: false
+    t.boolean "source_is_regex", default: false, null: false
+    t.boolean "source_is_case_sensitive", default: false, null: false
+    t.string "destination", null: false
+    t.boolean "active", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_link_translations", force: :cascade do |t|
+    t.integer "sub_link_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "link_title", default: ""
+    t.text "link_description", default: ""
+    t.index ["locale"], name: "index_sub_link_translations_on_locale"
+    t.index ["sub_link_id"], name: "index_sub_link_translations_on_sub_link_id"
+  end
+
+  create_table "sub_links", force: :cascade do |t|
+    t.integer "page_id"
+    t.string "icon_class"
+    t.string "href_class"
+    t.string "href_target"
+    t.boolean "visible", default: true
+    t.boolean "is_deletable", default: false
+    t.integer "flags", default: 0, null: false
+    t.integer "sort_order", default: 0
+    t.string "parent_slug"
+    t.string "top_link_slug"
+    t.string "link_page_slug_en"
+    t.string "link_page_slug_es"
+    t.string "link_page_slug_de"
+    t.string "link_page_slug_ca"
+    t.string "link_page_slug_ar"
+    t.string "link_page_slug_fr"
+    t.string "link_page_slug_ro"
+    t.string "link_page_slug_bg"
+    t.string "link_page_slug_it"
+    t.string "link_page_slug_nl"
+    t.string "link_page_slug_pl"
+    t.string "link_page_slug_pt"
+    t.string "link_page_slug_ru"
+    t.string "link_page_slug_tr"
+    t.string "link_page_slug_vi"
+    t.string "link_page_slug_ko"
+    t.string "slug"
+    t.boolean "is_external", default: false
+    t.string "link_url"
+    t.string "link_route"
+    t.string "link_route_params"
+    t.integer "prop_query_definition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "locale_content", default: {}, null: false
+    t.index ["flags"], name: "index_sub_links_on_flags"
+    t.index ["link_page_slug_ar"], name: "index_sub_links_on_link_page_slug_ar"
+    t.index ["link_page_slug_bg"], name: "index_sub_links_on_link_page_slug_bg"
+    t.index ["link_page_slug_ca"], name: "index_sub_links_on_link_page_slug_ca"
+    t.index ["link_page_slug_de"], name: "index_sub_links_on_link_page_slug_de"
+    t.index ["link_page_slug_en"], name: "index_sub_links_on_link_page_slug_en"
+    t.index ["link_page_slug_es"], name: "index_sub_links_on_link_page_slug_es"
+    t.index ["link_page_slug_fr"], name: "index_sub_links_on_link_page_slug_fr"
+    t.index ["link_page_slug_it"], name: "index_sub_links_on_link_page_slug_it"
+    t.index ["link_page_slug_ko"], name: "index_sub_links_on_link_page_slug_ko"
+    t.index ["link_page_slug_nl"], name: "index_sub_links_on_link_page_slug_nl"
+    t.index ["link_page_slug_pl"], name: "index_sub_links_on_link_page_slug_pl"
+    t.index ["link_page_slug_pt"], name: "index_sub_links_on_link_page_slug_pt"
+    t.index ["link_page_slug_ro"], name: "index_sub_links_on_link_page_slug_ro"
+    t.index ["link_page_slug_ru"], name: "index_sub_links_on_link_page_slug_ru"
+    t.index ["link_page_slug_tr"], name: "index_sub_links_on_link_page_slug_tr"
+    t.index ["link_page_slug_vi"], name: "index_sub_links_on_link_page_slug_vi"
+    t.index ["page_id"], name: "index_sub_links_on_page_id"
+    t.index ["prop_query_definition_id"], name: "index_sub_links_on_prop_query_definition_id"
+    t.index ["slug"], name: "index_sub_links_on_slug"
   end
 
   create_table "translations", id: :serial, force: :cascade do |t|
