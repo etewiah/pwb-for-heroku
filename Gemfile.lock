@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/etewiah/property_web_builder
-  revision: c4a8143f26996ec040c9a7ac78cc76c48f76c9c2
+  revision: 2876787586f735a4f4c39512a0424c4314ec67c7
   branch: rebny-sync
   specs:
     pwb (1.3.0)
