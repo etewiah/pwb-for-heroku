@@ -258,7 +258,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (3.12.4)
     rack (2.2.2)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -378,7 +378,7 @@ DEPENDENCIES
   paloma!
   pg (~> 0.18)
   property_web_scraper!
-  puma (~> 3.0)
+  puma (~> 3.12)
   pwb!
   rails (~> 5.1.1)
   sass-rails (~> 5.0)
