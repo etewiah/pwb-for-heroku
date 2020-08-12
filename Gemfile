@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -56,4 +55,4 @@ gem 'pwb', git: 'https://github.com/etewiah/property_web_builder'
 gem 'paloma', git: 'https://github.com/fredngo/paloma'
 # fog-core 1.44.0 requires xmlrpc which is not available in ruby < 2.3...
 gem 'fog-core', '1.43.0'
-gem 'property_web_scraper', git: 'https://github.com/RealEstateWebTools/property_web_scraper'
+# gem 'property_web_scraper', git: 'https://github.com/RealEstateWebTools/property_web_scraper'
